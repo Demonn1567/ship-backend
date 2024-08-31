@@ -22,6 +22,8 @@ def submit_parameters(request):
     elif request.method == 'GET':
         submissions = ParameterSubmission.objects.all()
         serializer = ParameterSubmissionSerializer(submissions, many=True)
+        dat = serializer.data
+        print(dat)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET', 'DELETE'])

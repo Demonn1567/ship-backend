@@ -6,6 +6,8 @@ def validate_positive(value):
         raise ValidationError('This value must be positive.')
 
 class ParameterSubmission(models.Model):
+    start  =models.CharField(max_length=255)
+    stop = models.CharField(max_length=255)
     wd_min = models.CharField(max_length=255)
     wwl = models.CharField(max_length=255)
     lwl = models.CharField(max_length=255)
